@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
 import ListItem from '../components/ListItem.js';
 import AddButton from '../components/AddButton.js';
+import { Collections } from '../data.js';
+import { PropTypes } from 'prop-types'
 
 export default function Home ({navigation}) {
     return(
@@ -9,8 +11,9 @@ export default function Home ({navigation}) {
                 <Text style={styles.title}>My Collections</Text>
                 <AddButton/>
             </View>
-            <ListItem/>
-            <ListItem/>
+            {Collections.map(collection => (
+                <ListItem key={collection.id} {...collection} />
+            ))}
         </View>
     )
 }
@@ -30,3 +33,7 @@ const styles = StyleSheet.create({
         fontSize:30
     },
 })
+
+Home.propTypes = {
+    navigation: PropTypes.object
+}

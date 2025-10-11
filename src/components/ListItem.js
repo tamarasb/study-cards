@@ -1,18 +1,19 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { PropTypes } from 'prop-types'
 
-export default function ListItem () {
+export default function ListItem (props) {
     const navigation = useNavigation()
     return(
         <TouchableOpacity
             style={styles.container}
-            onPress={() => navigation.navigate("Collection")}
+            onPress={() => navigation.navigate("Collection")}//integrate collections sample data to Home screen
         >
             <Text style={styles.name}>
-                Collection 1
+                {props.name}
             </Text>
             <Text style={styles.counter}>
-                30 cards
+                n cards
             </Text>
         </TouchableOpacity>
     )
@@ -41,3 +42,6 @@ const styles = StyleSheet.create({
         color:'#595758',
     }
 })
+ListItem.propTypes = {
+  name: PropTypes.string.isRequired,
+};
