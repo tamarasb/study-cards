@@ -1,19 +1,29 @@
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import ListItem from '../components/ListItem.js';
+import AddButton from '../components/AddButton.js';
 
 export default function Home ({navigation}) {
     return(
-        <View>
-            <Text style={styles.text}>Home Screen</Text>
-            <Button title='1' onPress={() => navigation.navigate("Collection")}/>
-            <StatusBar></StatusBar>
+        <View style={styles.container}>
+            <View>
+                <Text style={styles.title}>My Collections</Text>
+                <AddButton/>
+            </View>
+            
+            <ListItem></ListItem>
+            <ListItem></ListItem>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    text:{
-        color:'green',
-        margin:30
-    }
+    container:{
+        backgroundColor:'#ffeef2',
+        height: "100%",
+        padding:30
+    },
+    title:{
+        color:"#595758",
+        fontSize:30
+    },
 })
