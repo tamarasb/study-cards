@@ -20,11 +20,11 @@ export default function ListItem () {
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:"#e7dcdf85",
-        borderStyle:'dashed',
-        borderWidth:2,
-        borderColor:'#ffeef2',
-        borderStartColor: '#ff92c2',
+        borderStyle:'solid',
+        borderWidth:.5,
+        borderColor:'#ffc8fb',
+        borderRadius:10,
+        backgroundColor: '#59575815',
         paddingVertical:12,
         paddingHorizontal: 25,
         marginVertical:5,
