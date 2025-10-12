@@ -16,6 +16,7 @@ export default function Home ({navigation}) {
                 return(
                     <ListItem 
                         key={collection.id} 
+                        id={collection.id} 
                         name={collection.name} 
                         cardCount={cardCount}
                     />
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     },
     title:{
         color:"#595758",
-        fontSize:30
+        fontSize:28
     },
 })
 

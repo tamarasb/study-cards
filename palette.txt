@@ -1,0 +1,35 @@
+/* Coolors Exported Palette - https://coolors.co/595758-ffeef2-ffe4f3-ffc8fb-ff92c2 */
+
+- Tailwind
+
+{ 'davy's_gray': { DEFAULT: '#595758', 100: '#121212', 200: '#242324', 300: '#363536', 400: '#484747', 500: '#595758', 600: '#7c797a', 700: '#9d9b9c', 800: '#bdbcbd', 900: '#dedede' }, 'lavender_blush': { DEFAULT: '#ffeef2', 100: '#630017', 200: '#c6002e', 300: '#ff2a5c', 400: '#ff8da7', 500: '#ffeef2', 600: '#fff3f6', 700: '#fff6f8', 800: '#fff9fa', 900: '#fffcfd' }, 'pale_purple': { DEFAULT: '#ffe4f3', 100: '#610035', 200: '#c2006b', 300: '#ff249c', 400: '#ff85c8', 500: '#ffe4f3', 600: '#ffebf6', 700: '#fff0f8', 800: '#fff5fa', 900: '#fffafd' }, 'pink_lavender': { DEFAULT: '#ffc8fb', 100: '#5b0055', 200: '#b600a9', 300: '#ff11ef', 400: '#ff6cf5', 500: '#ffc8fb', 600: '#ffd2fc', 700: '#ffddfd', 800: '#ffe9fe', 900: '#fff4fe' }, 'amaranth_pink': { DEFAULT: '#ff92c2', 100: '#510023', 200: '#a10046', 300: '#f20069', 400: '#ff4395', 500: '#ff92c2', 600: '#ffa9ce', 700: '#ffbfdb', 800: '#ffd4e7', 900: '#ffeaf3' } }
+
+- CSV
+
+595758,ffeef2,ffe4f3,ffc8fb,ff92c2
+
+- With #
+
+#595758, #ffeef2, #ffe4f3, #ffc8fb, #ff92c2
+
+- Array
+
+["595758","ffeef2","ffe4f3","ffc8fb","ff92c2"]
+
+- Object
+
+{"Davy's gray":"595758","Lavender blush":"ffeef2","Pale purple":"ffe4f3","Pink lavender":"ffc8fb","Amaranth pink":"ff92c2"}
+
+- Extended Array
+
+[{"name":"Davy's gray","hex":"595758","rgb":[89,87,88],"cmyk":[0,2,1,65],"hsb":[330,2,35],"hsl":[330,1,35],"lab":[37,1,0]},{"name":"Lavender blush","hex":"ffeef2","rgb":[255,238,242],"cmyk":[0,7,5,0],"hsb":[346,7,100],"hsl":[346,100,97],"lab":[96,6,0]},{"name":"Pale purple","hex":"ffe4f3","rgb":[255,228,243],"cmyk":[0,11,5,0],"hsb":[327,11,100],"hsl":[327,100,95],"lab":[93,12,-4]},{"name":"Pink lavender","hex":"ffc8fb","rgb":[255,200,251],"cmyk":[0,22,2,0],"hsb":[304,22,100],"hsl":[304,100,89],"lab":[87,28,-18]},{"name":"Amaranth pink","hex":"ff92c2","rgb":[255,146,194],"cmyk":[0,43,24,0],"hsb":[334,43,100],"hsl":[334,100,79],"lab":[73,47,-7]}]
+
+- XML
+
+<palette>
+  <color name="Davy's gray" hex="595758" r="89" g="87" b="88" />
+  <color name="Lavender blush" hex="ffeef2" r="255" g="238" b="242" />
+  <color name="Pale purple" hex="ffe4f3" r="255" g="228" b="243" />
+  <color name="Pink lavender" hex="ffc8fb" r="255" g="200" b="251" />
+  <color name="Amaranth pink" hex="ff92c2" r="255" g="146" b="194" />
+</palette>

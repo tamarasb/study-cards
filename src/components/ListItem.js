@@ -2,12 +2,12 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { PropTypes } from 'prop-types'
 
-export default function ListItem ({name, cardCount}) {
+export default function ListItem ({id, name, cardCount}) {
     const navigation = useNavigation()
     return(
         <TouchableOpacity
             style={styles.container}
-            onPress={() => navigation.navigate("Collection")}
+            onPress={() => navigation.navigate("Collection", {id, name, cardCount})}
         >
             <Text style={styles.name}>
                 {name}
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     }
 })
 ListItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  cardCount: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    cardCount: PropTypes.number.isRequired
 };
