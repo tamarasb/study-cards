@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import ListItem from '../components/ListItem.js';
 import AddButton from '../components/AddButton.js';
-import { Collections } from '../data.js';
+import { Collections, Cards } from '../data.js';
 import { PropTypes } from 'prop-types'
 
 export default function Home ({navigation}) {
@@ -11,9 +11,16 @@ export default function Home ({navigation}) {
                 <Text style={styles.title}>My Collections</Text>
                 <AddButton/>
             </View>
-            {Collections.map(collection => (
-                <ListItem key={collection.id} {...collection} />
-            ))}
+            {Collections.map(collection => {
+                let cardCount = Cards.filter(card => card.collectionId === collection.id).length;                
+                return(
+                    <ListItem 
+                        key={collection.id} 
+                        name={collection.name} 
+                        cardCount={cardCount}
+                    />
+                )
+            })}
         </View>
     )
 }
