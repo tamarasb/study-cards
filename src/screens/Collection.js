@@ -2,14 +2,15 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import { PropTypes } from 'prop-types'
 import { Cards } from '../data.js';
 import AddButton from '../components/AddButton.js';
+import CardInfo from '../components/CardInfo.js';
 
 export default function Collection ({ route }) {
     const { id, name, cardCount} = route.params
     const cards = Cards.filter(card => card.collectionId === id)
     
     return(
-        <View>
-            <View style={styles.nameContainer}>
+        <View style={styles.container}>
+            <View style={styles.inline}>
                 <View>
                     <Text style={styles.name}>{name}</Text>
                     <Text>{cardCount} cards</Text>
@@ -24,36 +25,53 @@ export default function Collection ({ route }) {
                     />
                 </View>
             </View>
-            <View>
+            <View style={styles.cardsList}>
                 {cards.map(card => {
                     return(
-                        <View>
-                            <Text>{card.frontText}</Text>
-                            <Text>{card.backText}</Text>
-                        </View>
+                        <CardInfo 
+                            key={card.id} 
+                            frontText={card.frontText} 
+                            backText={card.backText}
+                        />
                     )
                 })}
             </View>
-            <AddButton/>
+            <View style={[styles.inline, styles.buttons]}>
+                <AddButton/>
+                <Image 
+                    source={require("../../assets/images/icons8-play-button-60.png")}
+                />
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    nameContainer:{
+    container:{
+        padding:30,
+        backgroundColor:"#ffffff",
+        justifyContent:'space-between',
+        alignContent:'center',
+        height:'100%'
+    },
+    inline:{
         justifyContent:"space-between",
         flexDirection:"row",
-        margin:30
     },
     name:{
         color:'#595758',
         fontSize:24,
         verticalAlign:'middle',
     },
+    cardsList:{
+        marginVertical:20,
+    },
     iconsArea:{
         alignItems:'center'
     },
-
+    buttons:{
+        marginBottom:10
+    }
 })
 
 Collection.propTypes = {
