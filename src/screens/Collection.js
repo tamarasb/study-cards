@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { PropTypes } from 'prop-types'
 import { Cards } from '../data.js';
 import AddButton from '../components/AddButton.js';
 import CardInfo from '../components/CardInfo.js';
 
-export default function Collection ({ route }) {
+export default function Collection ({ route, navegation }) {
+    const navigation = useNavigation()
     const { id, name, cardCount} = route.params
     const cards = Cards.filter(card => card.collectionId === id)
     
@@ -29,18 +31,20 @@ export default function Collection ({ route }) {
                 {cards.map(card => {
                     return(
                         <CardInfo 
-                            key={card.id} 
-                            frontText={card.frontText} 
-                            backText={card.backText}
+                            key={card.id} {...card}
                         />
                     )
                 })}
             </View>
             <View style={[styles.inline, styles.buttons]}>
                 <AddButton/>
-                <Image 
-                    source={require("../../assets/images/icons8-play-button-60.png")}
-                />
+                <TouchableOpacity
+                    onPress={() => navigation.navigate("Study", cards.map(card => card.id))}
+                >
+                    <Image 
+                        source={require("../../assets/images/icons8-play-button-60.png")}
+                    />
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -75,5 +79,6 @@ const styles = StyleSheet.create({
 })
 
 Collection.propTypes = {
-    route: PropTypes.object.isRequired
-};
+    route: PropTypes.object.isRequired,
+    navigation: PropTypes.object
+}
