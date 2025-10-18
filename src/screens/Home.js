@@ -2,9 +2,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import ListItem from '../components/ListItem.js';
 import AddButton from '../components/AddButton.js';
 import { Collections, Cards } from '../data.js';
-import { PropTypes } from 'prop-types'
 
-export default function Home ({navigation}) {
+export default function Home () {
     return(
         <View style={styles.container}>
             <View style={styles.titleSection}>
@@ -41,7 +40,3 @@ const styles = StyleSheet.create({
         fontSize:28
     },
 })
-
-Home.propTypes = {
-    navigation: PropTypes.object
-}

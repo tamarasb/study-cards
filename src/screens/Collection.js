@@ -5,7 +5,7 @@ import { Cards } from '../data.js';
 import AddButton from '../components/AddButton.js';
 import CardInfo from '../components/CardInfo.js';
 
-export default function Collection ({ route, navegation }) {
+export default function Collection ({ route }) {
     const navigation = useNavigation()
     const { id, name, cardCount} = route.params
     const cards = Cards.filter(card => card.collectionId === id)
@@ -80,5 +80,4 @@ const styles = StyleSheet.create({
 
 Collection.propTypes = {
     route: PropTypes.object.isRequired,
-    navigation: PropTypes.object
 }
