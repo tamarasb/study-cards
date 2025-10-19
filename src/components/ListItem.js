@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { PropTypes } from 'prop-types'
 
@@ -9,9 +9,11 @@ export default function ListItem ({id, name, cardCount}) {
             style={styles.container}
             onPress={() => navigation.navigate("Collection", {id, name, cardCount})}
         >
-            <Text style={styles.name}>
-                {name}
-            </Text>
+            <View style={styles.nameContainer}>
+                <Text style={styles.name}>
+                    {name}
+                </Text>
+            </View>
             <Text style={styles.counter}>
                 {cardCount} cards
             </Text>
@@ -30,12 +32,17 @@ const styles = StyleSheet.create({
         paddingHorizontal: 25,
         marginVertical:5,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    nameContainer:{
+        flex:1,
+        marginEnd:10
     },
     name:{
         fontWeight:"500",
         color:'#595758',
-        fontSize:16
+        fontSize:16,
     },
     counter:{
         textAlign:'flex-end',

@@ -13,7 +13,7 @@ export default function Collection ({ route }) {
     return(
         <View style={styles.container}>
             <View style={styles.inline}>
-                <View>
+                <View style={styles.info}>
                     <Text style={styles.name}>{name}</Text>
                     <Text>{cardCount} cards</Text>
                 </View>
@@ -63,6 +63,9 @@ const styles = StyleSheet.create({
     inline:{
         justifyContent:"space-between",
         flexDirection:"row",
+    },
+    info:{
+        flex:1
     },
     name:{
         color:'#595758',
