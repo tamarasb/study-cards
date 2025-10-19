@@ -19,9 +19,9 @@ O aplicativo é composto por três telas principais:
 * **3. Tela de Estudo:** A interface principal onde o usuário interage com os flashcards.
 
 <p align="center">
-  <img src="URL_DA_SUA_IMAGEM_AQUI" width="250" alt="Tela Inicial">
-  <img src="URL_DA_SUA_IMAGEM_AQUI" width="250" alt="Tela de Coleção">
-  <img src="URL_DA_SUA_IMAGEM_AQUI" width="250" alt="Tela de Estudo">
+  <img src="./layouts/HomeScreen.jpg" width="250" alt="Tela Inicial">
+  <img src="./layouts/CollectionScreen.jpg" width="250" alt="Tela de Coleção">
+  <img src="./layouts/StudyScreen.jpg" width="250" alt="Tela de Estudo">
 </p>
 
 ## ✨ Funcionalidades (Parte 1)
@@ -83,7 +83,7 @@ Este projeto foi planejado para evoluir. As próximas etapas incluem:
 
 ## 👨‍💻 Autor
 
-Feito por **[Tamara Silva Bastos]**.
+Feito por **Tamara Silva Bastos**.
 
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/SEU-LINKEDIN-AQUI)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tamara-silva-bastos-7a8b37215)
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tamarasb)
