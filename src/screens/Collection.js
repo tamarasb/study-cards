@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { PropTypes } from 'prop-types'
-import { Cards } from '../data.js';
+import { Cards } from '../mockData.js';
 import AddButton from '../components/AddButton.js';
 import CardInfo from '../components/CardInfo.js';
 

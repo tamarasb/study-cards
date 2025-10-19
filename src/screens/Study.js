@@ -1,7 +1,7 @@
 import { StyleSheet, View, Image, TouchableOpacity} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { PropTypes } from 'prop-types'
-import { Cards } from '../data.js';
+import { Cards } from '../mockData.js';
 import Card from '../components/Card.js';
 
 export default function Study ({route}) {

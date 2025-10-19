@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import ListItem from '../components/ListItem.js';
 import AddButton from '../components/AddButton.js';
-import { Collections, Cards } from '../data.js';
+import { Collections, Cards } from '../mockData.js';
 
 export default function Home () {
     return(
