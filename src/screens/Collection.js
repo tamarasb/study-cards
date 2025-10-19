@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { PropTypes } from 'prop-types'
 import { Cards } from '../mockData.js';
@@ -27,7 +27,7 @@ export default function Collection ({ route }) {
                     />
                 </View>
             </View>
-            <View style={styles.cardsList}>
+            <ScrollView style={styles.cardsList}>
                 {cards.map(card => {
                     return(
                         <CardInfo 
@@ -35,7 +35,7 @@ export default function Collection ({ route }) {
                         />
                     )
                 })}
-            </View>
+            </ScrollView>
             <View style={[styles.inline, styles.buttons]}>
                 <AddButton/>
                 <TouchableOpacity

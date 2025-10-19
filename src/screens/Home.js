@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView} from 'react-native';
 import ListItem from '../components/ListItem.js';
 import AddButton from '../components/AddButton.js';
 import { Collections, Cards } from '../mockData.js';
@@ -10,17 +10,19 @@ export default function Home () {
                 <Text style={styles.title}>My Collections</Text>
                 <AddButton/>
             </View>
-            {Collections.map(collection => {
-                let cardCount = Cards.filter(card => card.collectionId === collection.id).length;                
-                return(
-                    <ListItem 
-                        key={collection.id} 
-                        id={collection.id} 
-                        name={collection.name} 
-                        cardCount={cardCount}
-                    />
-                )
-            })}
+            <ScrollView>
+                {Collections.map(collection => {
+                    let cardCount = Cards.filter(card => card.collectionId === collection.id).length;                
+                    return(
+                        <ListItem 
+                            key={collection.id} 
+                            id={collection.id} 
+                            name={collection.name} 
+                            cardCount={cardCount}
+                        />
+                    )
+                })}
+            </ScrollView>
         </View>
     )
 }
