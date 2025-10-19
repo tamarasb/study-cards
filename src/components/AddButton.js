@@ -1,12 +1,9 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 
 export default function AddButton () {
-    const navigation = useNavigation()
     return (
         <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => navigation.navigate("Collection")}
         >
             <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>

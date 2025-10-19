@@ -1,5 +1,4 @@
 import { StyleSheet, View, Image, TouchableOpacity} from 'react-native';
-import { StatusBar } from 'expo-status-bar';
 import { PropTypes } from 'prop-types'
 import { Cards } from '../mockData.js';
 import Card from '../components/Card.js';
@@ -21,7 +20,6 @@ export default function Study ({route}) {
                     source={require("../../assets/images/icons8-rotate-50.png")}
                 />
             </TouchableOpacity>
-            <StatusBar></StatusBar>
         </View>
     )
 }
