@@ -39,7 +39,9 @@ export default function Collection ({ route }) {
             <View style={[styles.inline, styles.buttons]}>
                 <AddButton/>
                 <TouchableOpacity
+                    disabled={cardCount === 0}
                     onPress={() => navigation.navigate("Study", cards.map(card => card.id))}
+                    style={cardCount === 0 && styles.playButtonDisabled}
                 >
                     <Image 
                         source={require("../../assets/images/icons8-play-button-60.png")}
@@ -75,6 +77,9 @@ const styles = StyleSheet.create({
     },
     buttons:{
         marginBottom:10
+    },
+    playButtonDisabled:{
+        opacity:.3
     }
 })
 
