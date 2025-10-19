@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { PropTypes } from 'prop-types'
 import { Cards } from '../data.js';
@@ -6,13 +6,21 @@ import Card from '../components/Card.js';
 
 export default function Study ({route}) {
     const cardIds = route.params
-    const card = Cards[0];
+    const card = Cards.find(card => card.id===cardIds[0]);
     
     return(
         <View style={styles.container}>
-            <Card text={card.frontText}/>
-            
-
+            <Card 
+                text={card.frontText} 
+                side={'FRONT'}
+                n={1}
+                total={cardIds.length}
+            />
+            <TouchableOpacity>
+                <Image 
+                    source={require("../../assets/images/icons8-rotate-50.png")}
+                />
+            </TouchableOpacity>
             <StatusBar></StatusBar>
         </View>
     )
@@ -22,8 +30,8 @@ const styles = StyleSheet.create({
     container:{
         padding:30,
         backgroundColor:"#ffffff",
-        justifyContent:'space-between',
-        alignContent:'center',
+        justifyContent:'space-evenly',
+        alignItems:'center',
         height:'100%'
     },
 })
