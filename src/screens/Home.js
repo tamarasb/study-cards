@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import ListItem from '../components/ListItem.js';
 import AddButton from '../components/AddButton.js';
 import { Collections, Cards } from '../mockData.js';
+import { useState } from 'react';
+import AddCollectionModal from '../components/AddCollectionModal.js';
 
 export default function Home () {
+    const [isModalVisible, setIsModalVisible] = useState(false)
+    
+    function changeModalVisibility(){
+        setIsModalVisible(!isModalVisible)
+    }
     return(
         <View style={styles.container}>
             <View style={styles.titleSection}>
                 <Text style={styles.title}>My Collections</Text>
-                <AddButton/>
+                <AddButton onPress={changeModalVisibility} />
             </View>
             <ScrollView>
                 {Collections.map(collection => {
@@ -23,6 +30,10 @@ export default function Home () {
                     )
                 })}
             </ScrollView>
+            <AddCollectionModal 
+                isModalVisible={isModalVisible} 
+                changeModalVisibility={changeModalVisibility}
+            />
         </View>
     )
 }

@@ -1,9 +1,11 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 
-export default function AddButton () {
+export default function AddButton ({onPress}) {
     return (
         <TouchableOpacity
             style={styles.buttonContainer}
+            onPress={onPress}
         >
             <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
@@ -23,3 +25,7 @@ const styles = StyleSheet.create({
         margin: 'auto'
     }
 })
+
+AddButton.propTypes = {
+  onPress: PropTypes.func.isRequired
+};
