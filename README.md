@@ -44,7 +44,7 @@ Funcionalidades implementadas nesta primeira entrega:
 
 ## 🗺️ Próximas Etapas (Roadmap)
 
-Este projeto foi planejado para evoluir. As próximas etapas incluem:
+As próximas etapas incluem:
 
 ### Parte 2 - Interatividade e Estado
 * [ ] Cadastro de novas coleções (salvando no estado da aplicação).
@@ -61,7 +61,7 @@ Este projeto foi planejado para evoluir. As próximas etapas incluem:
 
 1.  Clone este repositório:
     ```bash
-    git clone [https://github.com/tamarasb/study-cards.git](https://github.com/tamarasb/study-cards.git)
+    git clone https://github.com/tamarasb/study-cards.git
     ```
 2.  Navegue até o diretório do projeto:
     ```bash
@@ -77,7 +77,7 @@ Este projeto foi planejado para evoluir. As próximas etapas incluem:
     ```
 4.  Inicie o servidor do Expo:
     ```bash
-    npx expo start
+    npm start
     ```
 5.  Escaneie o QR Code com o aplicativo Expo Go no seu celular.
 
