@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import ListItem from '../components/ListItem.js';
 import AddButton from '../components/AddButton.js';
-import { Collections, Cards } from '../mockData.js';
+import { Collections as MockCollections, Cards } from '../mockData.js';
 import { useState } from 'react';
 import AddCollectionModal from '../components/AddCollectionModal.js';
 
 export default function Home () {
     const [isModalVisible, setIsModalVisible] = useState(false)
+    const [collections, setCollections] = useState(MockCollections)
+    const [keyCount, setKeyCount] = useState(10)
     
     function changeModalVisibility(){
         setIsModalVisible(!isModalVisible)
@@ -18,8 +20,8 @@ export default function Home () {
                 <AddButton onPress={changeModalVisibility} />
             </View>
             <ScrollView>
-                {Collections.map(collection => {
-                    let cardCount = Cards.filter(card => card.collectionId === collection.id).length;                
+                {collections.map(collection => {
+                    let cardCount = Cards.filter(card => card.collectionId === collection.id).length;
                     return(
                         <ListItem 
                             key={collection.id} 
@@ -33,7 +35,10 @@ export default function Home () {
             <AddCollectionModal 
                 isModalVisible={isModalVisible} 
                 changeModalVisibility={changeModalVisibility}
-            />
+                addCollection={(collection)=>{setCollections([...collections, collection])}}
+                keyCount={keyCount}
+                setKeyCount={()=>{setKeyCount(keyCount+1)}}
+            />{console.log()}
         </View>
     )
 }

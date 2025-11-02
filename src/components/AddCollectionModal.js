@@ -8,7 +8,7 @@ import { StyleSheet,
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function AddCollectionModal ({isModalVisible,changeModalVisibility}) {
+export default function AddCollectionModal ({isModalVisible,changeModalVisibility,addCollection,keyCount,setKeyCount}) {
     const [name, setName] = useState('');
 
     return(
@@ -31,8 +31,14 @@ export default function AddCollectionModal ({isModalVisible,changeModalVisibilit
                 </View>
                 <TouchableOpacity
                     onPress={()=>{
-                        setName('')
-                        changeModalVisibility()
+                        let collection = {}
+                        if(name != ''){
+                            collection = {id:keyCount, name:name}
+                            addCollection(collection);
+                            setKeyCount()
+                            setName('')
+                            changeModalVisibility()
+                        }
                     }}
                     style={styles.buttonContainer}
                 >
@@ -70,20 +76,23 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     buttonContainer:{
-        //backgroundColor:'#a3ff9bff',
         paddingVertical: 10,
         paddingHorizontal:15,
         borderRadius:10,
-        borderColor:'#ffffff',borderWidth:2,
+        borderColor:'#ffffff',
+        borderWidth:2,
         marginTop:24
     },
     buttonText:{
-        color:'#ffffff',//#595758',
+        color:'#ffffff',
         fontWeight:'bold'
     }
 })
 
 AddCollectionModal.propTypes = {
   isModalVisible: PropTypes.bool.isRequired,
-  changeModalVisibility: PropTypes.func.isRequired
+  changeModalVisibility: PropTypes.func.isRequired,
+  addCollection: PropTypes.func.isRequired,
+  keyCount: PropTypes.number.isRequired,
+  setKeyCount: PropTypes.func.isRequired,
 };
