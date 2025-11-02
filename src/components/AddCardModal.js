@@ -1,14 +1,13 @@
 import { StyleSheet, 
     Text, 
-    View, 
-    TouchableOpacity, 
+    View,
     Modal,
-    TextInput,
-    Image
+    TextInput
 } from 'react-native';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import CreateButton from './CreateButton';
+import ModalHeader from './ModalHeader';
 
 export default function AddCardModal ({isModalVisible,changeModalVisibility,keyCount,setKeyCount,collectionId,addCard}) {
     const [frontText, setfrontText] = useState('');
@@ -22,17 +21,10 @@ export default function AddCardModal ({isModalVisible,changeModalVisibility,keyC
             style={styles.modal}
         >
             <View style={styles.container}>
-                <View style={styles.row}>
-                    <Text style={styles.title}>New Card</Text>
-                    <TouchableOpacity
-                        style={styles.closeButton}
-                        onPress={()=>{changeModalVisibility()}}
-                    >
-                        <Image 
-                            source={require("../../assets/images/icon-close-16.png")}
-                        />
-                    </TouchableOpacity>
-                </View>
+                <ModalHeader 
+                    title={"New Card"}
+                    changeModalVisibility={changeModalVisibility}
+                />
                 <View style={styles.form}>
                     <Text style={styles.label}>Front Text</Text>
                     <TextInput
@@ -75,7 +67,7 @@ const styles = StyleSheet.create({
     container:{
         alignItems:'center',
         backgroundColor:'#595758ec',
-        paddingBottom: 32,
+        paddingBottom: 24,
         borderColor:'#595758',
         borderWidth:2,
         marginTop:215,
@@ -83,27 +75,10 @@ const styles = StyleSheet.create({
         borderRadius:10,
         padding:8
     },
-    title: {
-        paddingTop:8,paddingStart:8,
-        fontSize:20,
-        fontWeight:'bold',
-        color:'#ffffff'
-    },
-    row:{
-        width:'100%',
-        justifyContent:"space-between",
-        flexDirection:"row",
-    },
-    closeButton:{
-        alignSelf:'flex-end',
-        padding: 8,
-        borderColor:"#ffffff",
-        borderRadius:50,
-        borderWidth:2,
-    },
     label:{
         fontSize:18,
-        color:'#ffffff'
+        color:'#ffffff',
+        marginVertical:8
     },
     form:{width:'85%'},
     input:{

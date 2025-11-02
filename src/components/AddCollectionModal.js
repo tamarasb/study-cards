@@ -1,14 +1,8 @@
-import { StyleSheet, 
-    Text, 
-    View, 
-    TouchableOpacity, 
-    Modal,
-    TextInput,
-    Image
-} from 'react-native';
+import { StyleSheet, View, Modal, TextInput } from 'react-native';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import CreateButton from './CreateButton.js';
+import ModalHeader from './ModalHeader.js';
 
 export default function AddCollectionModal ({isModalVisible,changeModalVisibility,addCollection,keyCount,setKeyCount}) {
     const [name, setName] = useState('');
@@ -21,16 +15,11 @@ export default function AddCollectionModal ({isModalVisible,changeModalVisibilit
             style={styles.modal}
         >
             <View style={styles.container}>
-                <TouchableOpacity
-                    style={styles.alignRight}
-                    onPress={()=>{changeModalVisibility()}}
-                >
-                    <Image 
-                        source={require("../../assets/images/icon-close-16.png")}
-                    />
-                </TouchableOpacity>
+                <ModalHeader 
+                    title={"New Collection"} 
+                    changeModalVisibility={changeModalVisibility}
+                />
                 <View>
-                    <Text style={styles.label}>New Collection</Text>
                     <TextInput
                         style={styles.input}
                         placeholder="your collection's name"
@@ -60,20 +49,13 @@ const styles = StyleSheet.create({
     container:{
         alignItems:'center',
         backgroundColor:'#595758ec',
-        paddingTop: 16,
-        paddingBottom: 32,
+        paddingBottom: 24,
         borderColor:'#595758',
         borderWidth:2,
         marginTop:215,
         marginHorizontal:10,
-        borderRadius:10
-    },
-    label: {
-        alignSelf: 'flex-start',
-        marginBottom: 15,
-        fontSize:20,
-        fontWeight:'bold',
-        color:'#ffffff'
+        borderRadius:10,
+        padding:8
     },
     input:{
         backgroundColor: '#ffffff',
@@ -81,12 +63,9 @@ const styles = StyleSheet.create({
         borderWidth: .8,
         width:300,
         height: 45,
-        borderRadius: 10
+        borderRadius: 10,
+        marginTop:16
     },
-    alignRight:{
-        alignSelf:'flex-end',
-        paddingEnd: 16
-    }
 })
 
 AddCollectionModal.propTypes = {
