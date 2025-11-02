@@ -3,7 +3,8 @@ import { StyleSheet,
     View, 
     TouchableOpacity, 
     Modal,
-    TextInput
+    TextInput,
+    Image
 } from 'react-native';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -19,6 +20,14 @@ export default function AddCollectionModal ({isModalVisible,changeModalVisibilit
             style={styles.modal}
         >
             <View style={styles.container}>
+                <TouchableOpacity
+                    style={styles.alignRight}
+                    onPress={()=>{changeModalVisibility()}}
+                >
+                    <Image 
+                        source={require("../../assets/images/icon-close-16.png")}
+                    />
+                </TouchableOpacity>
                 <View>
                     <Text style={styles.label}>New Collection</Text>
                     <TextInput
@@ -52,8 +61,9 @@ export default function AddCollectionModal ({isModalVisible,changeModalVisibilit
 const styles = StyleSheet.create({
     container:{
         alignItems:'center',
-        backgroundColor:'#595758e8',
-        paddingVertical: 40,
+        backgroundColor:'#595758ec',
+        paddingTop: 16,
+        paddingBottom: 32,
         borderColor:'#595758',
         borderWidth:2,
         marginTop:215,
@@ -86,6 +96,10 @@ const styles = StyleSheet.create({
     buttonText:{
         color:'#ffffff',
         fontWeight:'bold'
+    },
+    alignRight:{
+        alignSelf:'flex-end',
+        paddingEnd: 16
     }
 })
 
