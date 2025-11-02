@@ -47,7 +47,7 @@ export default function Collection ({ route, cards, addCard}) {
                 <AddButton onPress={changeModalVisibility}/>
                 <TouchableOpacity
                     disabled={cardCount === 0}
-                    onPress={() => navigation.navigate("Study", cards.map(card => card.id))}
+                    onPress={() => navigation.navigate("Study", collectionCards.map(card => card.id))}
                     style={cardCount === 0 && styles.playButtonDisabled}
                 >
                     <Image 

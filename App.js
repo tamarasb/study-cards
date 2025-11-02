@@ -37,7 +37,14 @@ export default function App() {
                         />
                     )}
                 </Stack.Screen>
-                <Stack.Screen name="Study" component={Study}/>
+                <Stack.Screen name="Study">
+                    {(props) => (
+                        <Study 
+                            {...props} 
+                            cards={cards}
+                        />
+                    )}
+                </Stack.Screen>
             </Stack.Navigator>
         </NavigationContainer>
     )

@@ -1,11 +1,10 @@
 import { StyleSheet, View, Image, TouchableOpacity} from 'react-native';
-import { PropTypes } from 'prop-types'
-import { Cards } from '../mockData.js';
+import { PropTypes } from 'prop-types';
 import Card from '../components/Card.js';
 
-export default function Study ({route}) {
+export default function Study ({route, cards}) {
     const cardIds = route.params
-    const card = Cards.find(card => card.id===cardIds[0]);
+    const card = cards.find(card => card.id===cardIds[0]);
     
     return(
         <View style={styles.container}>
@@ -35,5 +34,6 @@ const styles = StyleSheet.create({
 })
 
 Study.propTypes = {
-    route: PropTypes.array.isRequired
+    route: PropTypes.array.isRequired,
+    cards: PropTypes.array.isRequired,
 }
