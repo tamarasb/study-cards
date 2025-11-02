@@ -189,109 +189,109 @@ export const Cards = [
         backText: "Madrid"
     },
     {
-        id: 27,
+        id: 26,
         collectionId: 4,
         frontText: "以为 (yǐwéi)",
         backText: "to think; to believe (often mistakenly)"
     },
     {
-        id: 28,
+        id: 27,
         collectionId: 4,
         frontText: "懂 (dǒng)",
         backText: "to understand"
     },
     {
-        id: 29,
+        id: 28,
         collectionId: 4,
         frontText: "回答 (huídá)",
         backText: "to answer; to reply"
     },
     {
-        id: 30,
+        id: 29,
         collectionId: 9,
         frontText: "受ける (うける)",
         backText: "to take a lesson or test "
     },
     {
-        id: 31,
+        id: 30,
         collectionId: 9,
         frontText: "田舎 (いなか)",
         backText: "countryside"
     },
     {
-        id: 32,
+        id: 31,
         collectionId: 9,
         frontText: "意見 (いけん)",
         backText: "opinion"
     },
     {
-        id: 33,
+        id: 32,
         collectionId: 9,
         frontText: "お祭り (おまつり)",
         backText: "festival"
     },
     {
-        id: 34,
+        id: 33,
         collectionId: 9,
         frontText: "思い出す (おもいだす)",
         backText: "to remember"
     },
     {
-        id: 35,
+        id: 34,
         collectionId: 9,
         frontText: "けれど/けれども",
         backText: "however"
     },
     {
-        id: 36,
+        id: 35,
         collectionId: 9,
         frontText: "コンピュータ/コンピューター",
         backText: "computer"
     },
     {
-        id: 37,
+        id: 36,
         collectionId: 9,
         frontText: "辞典 (じてん)",
         backText: "dictionary"
     },
     {
-        id: 38,
+        id: 37,
         collectionId: 9,
         frontText: "地理 (ちり)",
         backText: "geography "
     },
     {
-        id: 39,
+        id: 38,
         collectionId: 7,
         frontText: "Habeas Corpus",
         backText: "A legal action by which a person can report an unlawful detention or imprisonment to a court."
     },
     {
-        id: 40,
+        id: 39,
         collectionId: 7,
         frontText: "Stare Decisis",
         backText: "The legal principle of determining points in litigation according to precedent."
     },
     {
-        id: 41,
+        id: 40,
         collectionId: 7,
         frontText: "Mens Rea",
         backText: "The 'guilty mind' or criminal intent required to be found guilty of a crime."
     },
     {
-        id: 42,
+        id: 41,
         collectionId: 7,
         frontText: "Due Process",
         backText: "The legal requirement that the state must respect all legal rights owed to a person. Ensures fair treatment through the judicial system."
     },
     {
-        id: 43,
+        id: 42,
         collectionId: 7,
         frontText: "Jurisdiction",
         backText: "The official power to make legal decisions and judgments."
     },
     {
-        id: 44,
+        id: 43,
         collectionId: 7,
         frontText: "Affidavit",
         backText: "A written statement confirmed by oath or affirmation, for use as evidence in court."

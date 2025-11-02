@@ -1,15 +1,22 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { PropTypes } from 'prop-types'
-import { Cards } from '../mockData.js';
 import AddButton from '../components/AddButton.js';
 import CardInfo from '../components/CardInfo.js';
+import AddCardModal from '../components/AddCardModal.js';
+import { useState } from 'react';
 
-export default function Collection ({ route }) {
+export default function Collection ({ route, cards, addCard}) {
     const navigation = useNavigation()
     const { id, name, cardCount} = route.params
-    const cards = Cards.filter(card => card.collectionId === id)
-    
+    const collectionCards = cards.filter(card => card.collectionId === id)
+    const [keyCount, setKeyCount] = useState(cards.length+1);
+    const [isModalVisible, setIsModalVisible] = useState(false)
+
+    function changeModalVisibility(){
+        setIsModalVisible(!isModalVisible)
+    }
+
     return(
         <View style={styles.container}>
             <View style={styles.inline}>
@@ -28,7 +35,7 @@ export default function Collection ({ route }) {
                 </View>
             </View>
             <ScrollView style={styles.cardsList}>
-                {cards.map(card => {
+                {collectionCards.map(card => {
                     return(
                         <CardInfo 
                             key={card.id} {...card}
@@ -37,7 +44,7 @@ export default function Collection ({ route }) {
                 })}
             </ScrollView>
             <View style={[styles.inline, styles.buttons]}>
-                <AddButton/>
+                <AddButton onPress={changeModalVisibility}/>
                 <TouchableOpacity
                     disabled={cardCount === 0}
                     onPress={() => navigation.navigate("Study", cards.map(card => card.id))}
@@ -48,6 +55,14 @@ export default function Collection ({ route }) {
                     />
                 </TouchableOpacity>
             </View>
+            <AddCardModal
+                isModalVisible={isModalVisible}
+                changeModalVisibility={changeModalVisibility}
+                keyCount={keyCount}
+                setKeyCount={()=>{setKeyCount(keyCount+1)}}
+                collectionId={id}
+                addCard={addCard}
+            />
         </View>
     )
 }
@@ -88,4 +103,6 @@ const styles = StyleSheet.create({
 
 Collection.propTypes = {
     route: PropTypes.object.isRequired,
+    cards: PropTypes.array.isRequired,
+    addCard: PropTypes.func.isRequired
 }

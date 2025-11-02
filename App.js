@@ -13,6 +13,7 @@ export default function App() {
     const [cards, setCards] = useState(MockCards);
 
     const addCollection = (collection)=>{setCollections([...collections, collection])}
+    const addCard = (card)=>{setCards([...cards, card])}
 
     return(
         <NavigationContainer>
@@ -27,7 +28,15 @@ export default function App() {
                         />
                     )}
                 </Stack.Screen>
-                <Stack.Screen name="Collection" component={Collection}/>
+                <Stack.Screen name="Collection">
+                    {(props) => (
+                        <Collection 
+                            {...props} 
+                            cards={cards} 
+                            addCard={addCard} 
+                        />
+                    )}
+                </Stack.Screen>
                 <Stack.Screen name="Study" component={Study}/>
             </Stack.Navigator>
         </NavigationContainer>
