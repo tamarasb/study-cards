@@ -8,6 +8,7 @@ import { StyleSheet,
 } from 'react-native';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import CreateButton from './CreateButton';
 
 export default function AddCardModal ({isModalVisible,changeModalVisibility,keyCount,setKeyCount,collectionId,addCard}) {
     const [frontText, setfrontText] = useState('');
@@ -36,7 +37,6 @@ export default function AddCardModal ({isModalVisible,changeModalVisibility,keyC
                     <Text style={styles.label}>Front Text</Text>
                     <TextInput
                         style={styles.input}
-                        placeholder="your collection's name"
                         numberOfLines={3}
                         value={frontText}
                         onChangeText={setfrontText}
@@ -44,13 +44,12 @@ export default function AddCardModal ({isModalVisible,changeModalVisibility,keyC
                     <Text style={styles.label}>Back Text</Text>
                     <TextInput
                         style={styles.input}
-                        placeholder="your collection's name"
                         numberOfLines={3}
                         value={backText}
                         onChangeText={setBackText}
                     />
                 </View>
-                <TouchableOpacity
+                <CreateButton
                     onPress={()=>{
                         let card = {}
                         if((frontText != '') && (backText != '')){
@@ -67,10 +66,7 @@ export default function AddCardModal ({isModalVisible,changeModalVisibility,keyC
                             changeModalVisibility()
                         }
                     }}
-                    style={styles.buttonContainer}
-                >
-                    <Text style={styles.buttonText}>CREATE</Text>
-                </TouchableOpacity>
+                />
             </View>
         </Modal>
     )
@@ -116,18 +112,6 @@ const styles = StyleSheet.create({
         borderWidth: .8,
         height: 45,
         borderRadius: 10
-    },
-    buttonContainer:{
-        paddingVertical: 10,
-        paddingHorizontal:15,
-        borderRadius:10,
-        borderColor:'#ffffff',
-        borderWidth:2,
-        marginTop:24
-    },
-    buttonText:{
-        color:'#ffffff',
-        fontWeight:'bold'
     }
 })
 

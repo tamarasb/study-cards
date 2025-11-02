@@ -8,6 +8,7 @@ import { StyleSheet,
 } from 'react-native';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import CreateButton from './CreateButton.js';
 
 export default function AddCollectionModal ({isModalVisible,changeModalVisibility,addCollection,keyCount,setKeyCount}) {
     const [name, setName] = useState('');
@@ -38,7 +39,7 @@ export default function AddCollectionModal ({isModalVisible,changeModalVisibilit
                         onChangeText={setName}
                     />
                 </View>
-                <TouchableOpacity
+                <CreateButton
                     onPress={()=>{
                         let collection = {}
                         if(name != ''){
@@ -49,10 +50,7 @@ export default function AddCollectionModal ({isModalVisible,changeModalVisibilit
                             changeModalVisibility()
                         }
                     }}
-                    style={styles.buttonContainer}
-                >
-                    <Text style={styles.buttonText}>CREATE</Text>
-                </TouchableOpacity>
+                />
             </View> 
         </Modal>
     )
@@ -84,18 +82,6 @@ const styles = StyleSheet.create({
         width:300,
         height: 45,
         borderRadius: 10
-    },
-    buttonContainer:{
-        paddingVertical: 10,
-        paddingHorizontal:15,
-        borderRadius:10,
-        borderColor:'#ffffff',
-        borderWidth:2,
-        marginTop:24
-    },
-    buttonText:{
-        color:'#ffffff',
-        fontWeight:'bold'
     },
     alignRight:{
         alignSelf:'flex-end',
