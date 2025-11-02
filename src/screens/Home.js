@@ -1,13 +1,12 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import ListItem from '../components/ListItem.js';
 import AddButton from '../components/AddButton.js';
-import { Collections as MockCollections, Cards } from '../mockData.js';
 import { useState } from 'react';
 import AddCollectionModal from '../components/AddCollectionModal.js';
+import PropTypes from 'prop-types';
 
-export default function Home () {
+export default function Home (props) {
     const [isModalVisible, setIsModalVisible] = useState(false)
-    const [collections, setCollections] = useState(MockCollections)
     const [keyCount, setKeyCount] = useState(10)
     
     function changeModalVisibility(){
@@ -20,8 +19,8 @@ export default function Home () {
                 <AddButton onPress={changeModalVisibility} />
             </View>
             <ScrollView>
-                {collections.map(collection => {
-                    let cardCount = Cards.filter(card => card.collectionId === collection.id).length;
+                {props.collections.map(collection => {
+                    let cardCount = props.cards.filter(card => card.collectionId === collection.id).length;
                     return(
                         <ListItem 
                             key={collection.id} 
@@ -35,10 +34,10 @@ export default function Home () {
             <AddCollectionModal 
                 isModalVisible={isModalVisible} 
                 changeModalVisibility={changeModalVisibility}
-                addCollection={(collection)=>{setCollections([...collections, collection])}}
+                addCollection={props.addCollection}
                 keyCount={keyCount}
                 setKeyCount={()=>{setKeyCount(keyCount+1)}}
-            />{console.log()}
+            />
         </View>
     )
 }
@@ -58,3 +57,9 @@ const styles = StyleSheet.create({
         fontSize:28
     },
 })
+
+Home.propTypes = {
+    collections: PropTypes.array.isRequired,
+    cards: PropTypes.array.isRequired,
+    addCollection: PropTypes.func.isRequired
+};
